@@ -33,8 +33,7 @@ public class ALGORITHM
         for (int i=1; i<200; i++) {
 
             //compare current value with best value
-            if (dataList[i].getData() <
-            dataList[minDataPosition].getData()) {
+            if (dataList[i].getData() < dataList[minDataPosition].getData()) {
                 // update the position of the best value
                 minDataPosition = i;
             }
@@ -47,12 +46,15 @@ public class ALGORITHM
     }
 
     public void countValue() {
+        // set the count to start at 0
         int count = 0;
-        // loop for each item
+        // ask user for a target character to count
+        char target = enterChar();
+        // loop for each item in the array
         for (int i = 0; i < 200; i++)
         {
-            // decide if the item should be counted
-            if (dataList[i].getData() == 'a' )
+            // decide if item at current index position matches target
+            if (dataList[i].getData() == target )
             {
                 // add 1 to count
                 count = count +1;
@@ -62,30 +64,40 @@ public class ALGORITHM
         // display the final count
         System.out.println("Total is : " + count);
     }
-    
+
     private char enterChar() {
         char userChar = JOptionPane.showInputDialog("Enter character").charAt(0);
         return userChar;
     }
 
     public void searchA() {
+        // ask the user to key in a target character
         char target = enterChar();
+        // clear the found flag, target not yet found
         boolean found = false;
+        // loop for each position in the array
         for (int i=0; i<200; i++) {
+            // decide if item at current index position matches target
             if(dataList[i].getData() == target) {
+                // set the found flag, target has been found
                 found = true;
             }
         }
 
+        // decide if the target was found
         if (found) {
+            //display success message with target
             System.out.println("Found " + target);
         } else {
+            // display not found message
             System.out.println("Not Found " + target);
         }
     }
 
     public void searchB() {
+
         char target = enterChar();
+
         boolean found = false;
 
         long startTime = System.nanoTime();
