@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=DATA()
+comment1.params=
+comment1.target=void\ makeData()
+comment2.params=
+comment2.target=void\ enterData()
+comment3.params=
+comment3.target=char\ getData()
+comment4.params=data
+comment4.target=void\ setData(char)
+comment5.params=
+comment5.target=void\ displayData()
+numComments=6
